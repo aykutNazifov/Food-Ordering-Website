@@ -2,6 +2,7 @@ import { pizzas } from "@/data";
 import { ProductType } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import { env } from "process";
 import React from "react";
 
 const fetchData = async (cat: String) => {
