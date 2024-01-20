@@ -1,6 +1,6 @@
 import { ActionTypes, CartType } from '@/types'
 import { create } from 'zustand'
-import { createJSONStorage, persist } from 'zustand/middleware'
+import { persist } from 'zustand/middleware'
 
 
 const INITIAL_STATE = {
@@ -44,7 +44,7 @@ export const useCartStore = create(persist<CartType & ActionTypes>((set, get) =>
         set((state) => (
             {
                 products: state.products.filter(p => p.id !== item.id),
-                totalItem: state.totalItems - item.quantity,
+                totalItems: state.totalItems - item.quantity,
                 totalPrice: state.totalPrice - item.price
             }
         ))
